@@ -71,14 +71,14 @@ public class Aplicacion extends javax.swing.JFrame {
     private void botoncitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botoncitoActionPerformed
         // TODO add your handling code here:
         Usuario as=new Usuario();/*objeto con constructor*/
-        as.peso=65;
-        as.altura=1.73f;/*altura es un atributo,as es el objeto,lleva f porque es un dato flotante*/
+        //as.peso=65;
+        //as.altura=1.73f;/*altura es un atributo,as es el objeto,lleva f porque es un dato flotante*/
+        as.setPeso(65);
+        as.setAltura(1.70f);
         Imc modelo=new Imc();
         modelo.u=as;
                 modelo.calcular();
                 etiqueta.setText(modelo.calcular());/*muestra al usuario el imc cambiando el texto resultado por el mensaje introducido en la clase*/
-        
-        
         
     }//GEN-LAST:event_botoncitoActionPerformed
 
