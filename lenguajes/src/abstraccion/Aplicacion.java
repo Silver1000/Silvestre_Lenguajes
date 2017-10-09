@@ -84,9 +84,9 @@ public class Aplicacion extends javax.swing.JFrame {
                     .addComponent(textoPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(textoAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textoAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(48, 48, 48)
                 .addComponent(etiqueta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
@@ -102,8 +102,11 @@ public class Aplicacion extends javax.swing.JFrame {
         Usuario as=new Usuario();/*objeto con constructor*/
         //as.peso=65;
         //as.altura=1.73f;/*altura es un atributo,as es el objeto,lleva f porque es un dato flotante*/
-        as.setPeso(65);
-        as.setAltura(1.70f);
+        //Primero pediomos el valor del texto al primer campo
+       float peso=Float.parseFloat(textoPeso.getText());
+        as.setPeso(peso);
+        float altura=Float.parseFloat(textoAltura.getText());
+        as.setAltura(altura);
         Imc modelo=new Imc();
         modelo.u=as;
                 modelo.calcular();
