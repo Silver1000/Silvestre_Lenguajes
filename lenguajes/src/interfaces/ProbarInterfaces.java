@@ -9,14 +9,12 @@ package interfaces;
  *
  * @author T-102
  */
-public interface Direccion {
-
-    public int x=2;
-    
-//Un metodo apenas se esta implementando 
-    public void generarDireccion();//metodo abstracto (no tiene funcionalidad)
-    
-    
-    
-    
+public class ProbarInterfaces {
+    public static void main(String[] args) {
+        //No se pueden crear objetos
+       // Direccion d=new Direccion();
+       //Referencia creada 
+       Direccion d;
+       
+    }
 }
