@@ -103,15 +103,23 @@ public class Aplicacion extends javax.swing.JFrame {
         //as.peso=65;
         //as.altura=1.73f;/*altura es un atributo,as es el objeto,lleva f porque es un dato flotante*/
         //Primero pediomos el valor del texto al primer campo
-       float peso=Float.parseFloat(textoPeso.getText());
+       
+        try{
+        float peso=Float.parseFloat(textoPeso.getText());
+        Validaciones.validarNumeroNoNegativo(peso);
         as.setPeso(peso);
-        float altura=Float.parseFloat(textoAltura.getText());
+       
+       float altura=Float.parseFloat(textoAltura.getText());
         as.setAltura(altura);
+        
+        
         Imc modelo=new Imc();
         modelo.u=as;
                 modelo.calcular();
                 etiqueta.setText(modelo.calcular());/*muestra al usuario el imc cambiando el texto resultado por el mensaje introducido en la clase*/
-        
+        }catch(Exception e){
+        etiqueta.setText(e.getMessage());
+        }
     }//GEN-LAST:event_botoncitoActionPerformed
 
     private void textoPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoPesoActionPerformed
