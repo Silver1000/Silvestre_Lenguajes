@@ -13,7 +13,7 @@ public class Conexion {
     
   public static Connection conectarse(String login, String password) throws SQLException, ClassNotFoundException{
   //Primero escribimos la url del servidor de mysql
-  String url="jdbc:mysql://localhost:3306/mysql"; //jdbc=java data base connector
+  String url="jdbc:mysql://localhost:3306/mysql"; //jdbc=java data base connector ,servidor de la base de datos
   //Ahora hacemos el cargado con codigo del driver
   //Cargamos el driver de mysql para que sepa que nos conectaremos 
   //a mysql
