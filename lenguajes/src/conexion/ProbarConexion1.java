@@ -6,7 +6,7 @@
 package conexion;
 import java.sql.*;
 
-public class ProbarConexion {
+public class ProbarConexion1 {
     //static se ejecuta antes que otros metodos
     public static void main(String[] args) {
         Connection con=null;//se inicializa para que no quede vacia 
@@ -14,22 +14,10 @@ public class ProbarConexion {
     con=    Conexion.conectarse("root", "");//usuario y contraseña del wampserver
             System.out.println("Te conectaste");
             //Aqui vienen querrys de mysql
-             //Con la conexion que se llama con
-             //vamos a generar una sentencia la cual es una clase
-             // Statement st=con.createStatement();   
-             //Generamos la tablita
-             //st.execute("create table tablita(id integer primary key, Nombre varchar(10))");
-             //tambien se cierra las sentencias al igual que las condiciones
-             //update instruccion PreparedStatement st=con.prepareStatement("update tablita set nombre=? where id=?");
-             //Caso 1: Insert
-             PreparedStatement st=con.prepareStatement("insert into tablita values(?,?)");
-             st.setInt(1, 1);//primer numero de la columna,segundo el valor a insertar 
-             st.setString(2, "Silvestre");
-             st.execute();//ejecuta el insert introducido
-             st.close();
-             System.out.println("Registro insertado");
-             
-             //System.out.println("Tabla Generada con exito");
+            //Caso espcecial del select
+            //Paso 1 Generar una consulta(querry)
+            Statement st=con.createStatement();
+            ResultSet rs=st.executeQuery("Select * from tablita");
     }catch(ClassNotFoundException e){
             System.out.println("No se cargo bien el driver");
     }catch(SQLException e){
