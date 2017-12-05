@@ -16,9 +16,11 @@ public class ProbarConexion {
             //Aqui vienen querrys de mysql
              //Con la conexion que se llama con
              //vamos a generar una sentencia la cual es una clase
-             // Statement st=con.createStatement();   
+             /* Statement st=con.createStatement();*/   
              //Generamos la tablita
-             //st.execute("create table tablita(id integer primary key, Nombre varchar(10))");
+            /* st.execute("create table tablita(id integer primary key, Nombre varchar(10))");
+             st.close();
+              System.out.println("Tabla Generada con exito");*/
              //tambien se cierra las sentencias al igual que las condiciones
              //update instruccion PreparedStatement st=con.prepareStatement("update tablita set nombre=? where id=?");
              //Caso 1: Insert
@@ -29,7 +31,7 @@ public class ProbarConexion {
              st.close();
              System.out.println("Registro insertado");
              
-             //System.out.println("Tabla Generada con exito");
+            
     }catch(ClassNotFoundException e){
             System.out.println("No se cargo bien el driver");
     }catch(SQLException e){
