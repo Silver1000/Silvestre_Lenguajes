@@ -19,7 +19,7 @@ public class Segundo extends Thread {
     //Aqui pone la accion de tu thread
     System.out.println("Soy el segundo Thread que no hago nada");
          try {
-             Thread.sleep(1000);
+             Thread.sleep(1000);//Para que descanse el thread
          } catch (InterruptedException ex) {
              Logger.getLogger(Segundo.class.getName()).log(Level.SEVERE, null, ex);
          }
